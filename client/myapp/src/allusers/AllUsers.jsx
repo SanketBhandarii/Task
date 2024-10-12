@@ -10,7 +10,7 @@ function AllUsers() {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const response = await axios.get("http://localhost:8080/api/getusers");
+        const response = await axios.get("https://task-19x3.onrender.com/api/getusers");
         setUsers(response.data.all); // Assuming response.data.all contains the array of users
         setLoading(false); // Set loading to false after data is fetched
       } catch (err) {
