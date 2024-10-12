@@ -14,7 +14,7 @@ export const storage = new CloudinaryStorage({
   cloudinary: cloudinary,
   params: {
     folder: "user-avatar",
-    allowedFormats: ["png", "webp", "jpg", "jpeg"],
+    allowedFormats: ["png", "webp", "jpg", "jpeg", "gif"],
   },
 });
 
