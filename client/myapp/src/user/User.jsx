@@ -11,6 +11,9 @@ function User() {
 
   const handleForm = async (event) => {
     event.preventDefault();
+    setAvatar("");
+    setUsername("");
+    setSocial("");
 
     const formData = new FormData();
     formData.append("username", username);
@@ -29,9 +32,6 @@ function User() {
       );
       setMsg(response.data.msg);
       setTimeout(() => {
-        setAvatar("");
-        setUsername("");
-        setSocial("");
         setMsg(null);
       }, 2500);
     } catch (error) {
@@ -86,9 +86,10 @@ function User() {
           </button>
         </form>
         <div className="mt-4 text-center">
-          <NavLink 
-            to={"/allusers"} 
-            className="inline-block bg-sky-600 text-white py-2 px-4 rounded-lg hover:bg-sky-700 transition duration-300 transform hover:scale-105 shadow-lg">
+          <NavLink
+            to={"/allusers"}
+            className="inline-block bg-sky-600 text-white py-2 px-4 rounded-lg hover:bg-sky-700 transition duration-300 transform hover:scale-105 shadow-lg"
+          >
             Show All Users
           </NavLink>
         </div>

@@ -1,7 +1,12 @@
 import { User } from "../models/userModel.js";
-
 export const imageUpload = async (req, res, next) => {
   const { username, social } = req.body;
+
+  if (!username || !social || !req.file) {
+    return res
+      .status(400)
+      .json({ status: 400, msg: "Missing required fields" });
+  }
 
   try {
     const newUser = await User.create({
