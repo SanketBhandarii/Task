@@ -11,6 +11,9 @@ connectDB()
     app.listen(process.env.PORT || 8080, () => {
       console.log(`Server is running at port : ${process.env.PORT}`);
     });
+    app.get("/",(req, res) => {
+        res.send("Hello! Welcome to the backend")
+    })
   })
   .catch((err) => {
     console.log("MONGODB connection failed");
